@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block contenido %}
+
+    {% for a in Celulares_List%}
+        <div class="col-md-2 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src={{a.srcimg}}>
+                        </div>
+                        <center>
+                        <h2><a>{{a.modelo}}</a></h2>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="{{a.idpaypal}}">
+                            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+                        
+                        
+                        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="{{a.idpaypalcarrito}}">
+                            <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal, la forma rápida y segura de pagar en Internet.">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+                        </center>
+
+ 
+                        <br></br>                      
+                    </div>
+                </div>
+    {% endfor %}
+
+{% endblock contenido %}

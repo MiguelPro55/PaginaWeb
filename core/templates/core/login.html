@@ -1,0 +1,28 @@
+{%load static%}
+
+
+<link rel="stylesheet" href="{% static 'core/css/titulo.css' %}">
+<body background="{% static 'core/img/fondo.jpg' %}"> 
+{% csrf_token %}
+<div id="logo"> 
+  <h1><i> Bienvenido a ALPROCASHOPS</i></h1>
+</div> 
+<section class="stark-login">
+  <form method="post">
+   {% csrf_token %}	
+   <div id="fade-box">
+    	<div class="form-group">
+        <input class="form-control" type= "text" name="username" placeholder="Nombre de usuario" required>
+        <input class="form-control" type="password" name="password" placeholder="Contraseña" required>
+        <h3><a href="/registro/" style="color:#00a4a2;">Registrarse</a></h3>
+        <input class="btn btn-primary" type="submit" value="Ingresar">
+
+
+    	</div> 
+    </div>
+      </form>
+</section>        
+
+            
+            
+            </div>
